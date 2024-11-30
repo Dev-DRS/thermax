@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" src="app.js" defer></script>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+  <script type="module">
+    const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
+    const annotationClicked = (annotation) => {
+      let dataset = annotation.dataset;
+      modelViewer1.cameraTarget = dataset.target;
+      modelViewer1.cameraOrbit = dataset.orbit;
+    }
+  
+    modelViewer1.querySelectorAll('button').forEach((hotspot) => {
+      console.log("hello hotspot", hotspot);
+      hotspot.addEventListener('click', () => annotationClicked(hotspot));
+    });
+    
+  </script>
+  
+</head>
+<body>
+  <nav id="sidebar">
+    <ul>
+      <li style="background-color: rgba(255, 0, 0, 0.8);">
+        <span class="logo">ENERGY</span>
+        <button onclick=toggleSidebar() id="toggle-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m313-480 155 156q11 11 11.5 27.5T468-268q-11 11-28 11t-28-11L228-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T468-692q11 11 11 28t-11 28L313-480Zm264 0 155 156q11 11 11.5 27.5T732-268q-11 11-28 11t-28-11L492-452q-6-6-8.5-13t-2.5-15q0-8 2.5-15t8.5-13l184-184q11-11 27.5-11.5T732-692q11 11 11 28t-11 28L577-480Z"/></svg>
+        </button>
+      </li>
+      <li>
+        <button onclick=toggleSubMenu(this) class="dropdown-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M520-640v-160q0-17 11.5-28.5T560-840h240q17 0 28.5 11.5T840-800v160q0 17-11.5 28.5T800-600H560q-17 0-28.5-11.5T520-640ZM120-480v-320q0-17 11.5-28.5T160-840h240q17 0 28.5 11.5T440-800v320q0 17-11.5 28.5T400-440H160q-17 0-28.5-11.5T120-480Zm400 320v-320q0-17 11.5-28.5T560-520h240q17 0 28.5 11.5T840-480v320q0 17-11.5 28.5T800-120H560q-17 0-28.5-11.5T520-160Zm-400 0v-160q0-17 11.5-28.5T160-360h240q17 0 28.5 11.5T440-320v160q0 17-11.5 28.5T400-120H160q-17 0-28.5-11.5T120-160Zm80-360h160v-240H200v240Zm400 320h160v-240H600v240Zm0-480h160v-80H600v80ZM200-200h160v-80H200v80Zm160-320Zm240-160Zm0 240ZM360-280Z"/></svg>
+          <span>Cogeneration Plants</span>
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-361q-8 0-15-2.5t-13-8.5L268-556q-11-11-11-28t11-28q11-11 28-11t28 11l156 156 156-156q11-11 28-11t28 11q11 11 11 28t-11 28L508-372q-6 6-13 8.5t-15 2.5Z"/></svg>
+                </button>
+                <ul class="sub-menu">
+                    <div>
+                        <li class="active"><a href="air.html">AIR COMPESSOR</a></li>
+                        <li><a href="jet.html">JET ENGINE</a></li>
+                        <li><a href="motor.html">MOTOR ENGINE</a></li>
+                    </div>
+                </ul>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <model-viewer id="hotspot-camera-view-demo"  src="./assets/models/Air Compressor_v1.glb" alt="Thor and the Midgard Serpent" camera-controls enable-pan touch-action="none" camera-orbit="180deg 70.11deg auto" camera-target="1m 1m 1m" field-of-view="45deg" min-field-of-view="45deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 5%" poster="../../assets/SketchfabModels/ThorAndTheMidgardSerpent.webp" ar ar-modes="webxr scene-viewer quick-look">
+    <button slot="ar-button" id="ar-button">
+      View in your space
+    </button>
+    <div class="info-panel" id="info-panel" slot="hotspot-1" 
+        data-position="-2m 3.5m 0m" 
+        data-normal="0m 0m 1m" 
+        style="display: none;">
+        <h3>Machine Case</h3>
+        <p>This is the machine case of the air compressor. It houses the internal components, ensuring protection and durability.</p>
+    </div>
+
+    <button class="view-button" slot="hotspot-0" data-position="-1m 3m 0m" data-normal="0m 0m -1m" data-orbit="-3m 3m 0m" data-target="-1.5m 4m 1.5m" style="display: block;" onclick="toggleInfoPanel()">
+        Machine Case
+    </button>   
+
+
+     <button class="view-button" slot="hotspot-3" data-position="0m 3.25m 1m" data-normal="0m 0m -1m" data-orbit="-2m 4m -3m" data-target="-1m 3m 3m" style="display: block;" onclick="toggleInfoPanel_3()">
+       Rotating Wheels    
+    </button>  
+    
+    
+    <div class="info-panel" id="info-panel_3" slot="hotspot-4" 
+    data-position="0m 3.25m 1m" 
+    data-normal="0m 0m 1m" 
+    style="display: none;">
+    <h3>Rotating Wheels</h3>
+    <p>This is the machine case of the air compressor. It houses the internal components, ensuring protection and durability.</p>
+</div>
+
+
+<button class="view-button" slot="hotspot-2" 
+data-position="1m 3.5m 0m" 
+data-normal="0m 0m -1m" 
+data-orbit="-180.3926deg 90.45934deg 1m"
+data-target="1m 3m -3.5m" style="display: block;" 
+onclick="toggleInfoPanel_2()">
+Pressure Gauge
+</button>
+
+<div class="info-panel" id="info-panel_2" slot="hotspot-24" 
+data-position="1m 3.8m 0m" 
+data-normal="0m 0m -1m" 
+style="display: none;">
+<h3>Pressure Gauge</h3>
+<p>This is the machine case of the air compressor. It houses the internal components, ensuring protection and durability.</p>
+</div>
+
+<button class="view-button" slot="hotspot-223" 
+data-position="0m 0m 0m" 
+data-normal="0m 0m 0m"  
+data-orbit="-180deg 70.45934deg auto"
+style="display: block;" 
+onclick="Reset('info-panel_2','info-panel_3','info-panel')">
+Reset
+</button>
+
+  </model-viewer>
+  
+
+</body>
+</html>
