@@ -296,8 +296,8 @@ model-viewer {
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
-  top: 20px;
-  left: 20px;
+  top: 20%;
+  left: 20%;
 }
 
 .info-panel h3 {
