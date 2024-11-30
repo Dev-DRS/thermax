@@ -285,7 +285,9 @@ model-viewer {
   width: auto;
   background-color: gray;
 }
+
 .info-panel {
+  position: relative;
   background: rgb(206, 55, 55);
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -294,10 +296,12 @@ model-viewer {
   font-size: 14px;
   line-height: 1.5;
   text-align: center;
+  top: 20px;
+  left: 20px;
 }
 
 .info-panel h3 {
-  margin: 0 0 5px;
+  margin: 0 10 5px;
   font-size: 16px;
   font-weight: bold;
 }
