@@ -12,7 +12,7 @@
     const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
     const annotationClicked = (annotation) => {
       let dataset = annotation.dataset;
-      //modelViewer1.cameraTarget = dataset.target;
+      modelViewer1.cameraTarget = dataset.target;
       modelViewer1.cameraOrbit = dataset.orbit;
     }
   
