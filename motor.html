@@ -51,13 +51,13 @@
     </ul>
   </nav>
 
- <model-viewer id="hotspot-camera-view-demo" src="./assets/models/Motorcycle_Engine_v1.glb" alt="Thor and the Midgard Serpent" camera-controls enable-pan touch-action="none" camera-orbit="180deg 70.11deg auto" camera-target="1m 1m 1m" field-of-view="45deg" min-field-of-view="45deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 5%" poster="../../assets/SketchfabModels/ThorAndTheMidgardSerpent.webp" ar ar-modes="webxr scene-viewer quick-look">
+ <model-viewer id="hotspot-camera-view-demo" src="./assets/models/Motorcycle_Engine_v1.glb" alt="Thor and the Midgard Serpent" camera-controls enable-pan touch-action="none" camera-orbit="180deg 70.11deg auto" camera-target="0m 0m 1m" field-of-view="45deg" min-field-of-view="45deg" max-field-of-view="45deg" interpolation-decay="200" min-camera-orbit="auto auto 5%" poster="../../assets/SketchfabModels/ThorAndTheMidgardSerpent.webp" ar ar-modes="webxr scene-viewer quick-look">
 
   <button slot="ar-button" id="ar-button">
     View in your space
   </button>
 
- <button class="view-button" slot="hotspot-9" data-position="0m 1m 0m" data-normal="0m 0m -1m" data-orbit="-160.3926deg 90.45934deg 0.5m" data-target="0m 1m -1m"  onclick="toggleInfoPanel_7()">
+ <button class="view-button" slot="hotspot-9" data-position="0m 1m 0m" data-normal="0m 0m -1m" data-orbit="-160.3926deg 90.45934deg 0.5m" data-target="-0.5m 1m -1m"  onclick="toggleInfoPanel_7()">
   Fuel Tank
 </button> 
 <div class="info-panel" id="info-panel_7"  slot="hotspot-99" 
@@ -69,11 +69,11 @@ style="display: none;">
   That's why their DBTs rotate in the opposite direction of their MP. This process increases the overall efficiency of the turbine.</p>
 </div>
 
-<button class="view-button" slot="hotspot-10" data-position="0m 0.5m 0m" data-normal="0m 0m -1m" data-orbit="-220.3926deg 80.45934deg 0.5m" data-target="2m 1m -1m"  onclick="toggleInfoPanel_8()">
+<button class="view-button" slot="hotspot-10" data-position="0m 0.5m 0m" data-normal="0m 0m -1m" data-orbit="-210.3926deg 90.45934deg -1m" data-target="1m 1m -1.5m"  onclick="toggleInfoPanel_8()">
   Engine
 </button> 
 <div class="info-panel" id="info-panel_8"  slot="hotspot-100" 
-data-position="0m 0m 1m" 
+data-position="0.3m 0m 1m" 
 data-normal="0m 0m -1m" 
 style="display: none;">
 <h3>Engine</h3>
@@ -82,7 +82,7 @@ style="display: none;">
 </div>
 
 
-<button class="view-button" slot="hotspot-11" data-position="-0.6m 0.1m 0m" data-normal="0m 0m -1m" data-orbit="-210.3926deg 80.45934deg 0.5m" data-target="1m 1m -1m"  onclick="toggleInfoPanel_9()">
+<button class="view-button" slot="hotspot-11" data-position="-0.6m 0.1m 0m" data-normal="0m 0m -1m" data-orbit="-210.3926deg 80.45934deg 0.5m" data-target="0.3m 1m -1m"  onclick="toggleInfoPanel_9()">
   Exhaust Pipe
 </button> 
 <div class="info-panel" id="info-panel_9"  slot="hotspot-111" 
@@ -99,7 +99,7 @@ data-position="0m 0m 0m"
 data-normal="0m 0m 0m"  
 data-orbit="-180deg 70.45934deg auto"
 style="display: block;" 
-onclick="Reset('info-panel_2','info-panel_3','info-panel')">
+onclick="Reset('info-panel_9','info-panel_8','info-panel_7')">
 Reset
 </button>
  
