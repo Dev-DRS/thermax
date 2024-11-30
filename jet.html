@@ -9,7 +9,7 @@
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
   <script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
   <script type="module">
-    /*const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
+    const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
     const annotationClicked = (annotation) => {
       let dataset = annotation.dataset;
       //modelViewer1.cameraTarget = dataset.target;
@@ -19,37 +19,37 @@
     modelViewer1.querySelectorAll('button').forEach((hotspot) => {
       console.log("hello hotspot", hotspot);
       hotspot.addEventListener('click', () => annotationClicked(hotspot));
-    }); */
-
-    const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
-
-    // Store the default camera orbit for resetting later
-    const defaultCameraOrbit = modelViewer1.getAttribute("camera-orbit");
-    const defaultCameraTarget = modelViewer1.getAttribute("camera-target");
-    let resetOrbitTimeout;
-
-    // Focus on the info panel and reset after a delay
-    const annotationClicked = (annotation) => {
-      let dataset = annotation.dataset;
-
-      // Clear any existing timeout to avoid multiple resets
-      clearTimeout(resetOrbitTimeout);
-
-      // Set camera orbit to focus on the info panel
-      modelViewer1.cameraOrbit = dataset.orbit;
-      modelViewer1.cameraTarget = dataset.target;
-
-      // Reset orbit after 5 seconds
-      resetOrbitTimeout = setTimeout(() => {
-        //modelViewer1.cameraOrbit = defaultCameraOrbit;
-        modelViewer1.cameraTarget = defaultCameraTarget;
-      }, 5000); // 5000 ms = 5 seconds
-    };
-
-    // Attach click event listeners to hotspots
-    modelViewer1.querySelectorAll('button').forEach((hotspot) => {
-      hotspot.addEventListener('click', () => annotationClicked(hotspot));
     });
+
+    // const modelViewer1 = document.querySelector("#hotspot-camera-view-demo");
+
+    // // Store the default camera orbit for resetting later
+    // const defaultCameraOrbit = modelViewer1.getAttribute("camera-orbit");
+    // const defaultCameraTarget = modelViewer1.getAttribute("camera-target");
+    // let resetOrbitTimeout;
+
+    // // Focus on the info panel and reset after a delay
+    // const annotationClicked = (annotation) => {
+    //   let dataset = annotation.dataset;
+
+    //   // Clear any existing timeout to avoid multiple resets
+    //   clearTimeout(resetOrbitTimeout);
+
+    //   // Set camera orbit to focus on the info panel
+    //   modelViewer1.cameraOrbit = dataset.orbit;
+    //   modelViewer1.cameraTarget = dataset.target;
+
+    //   // Reset orbit after 5 seconds
+    //   resetOrbitTimeout = setTimeout(() => {
+    //     //modelViewer1.cameraOrbit = defaultCameraOrbit;
+    //     modelViewer1.cameraTarget = defaultCameraTarget;
+    //   }, 5000); // 5000 ms = 5 seconds
+    // };
+
+    // // Attach click event listeners to hotspots
+    // modelViewer1.querySelectorAll('button').forEach((hotspot) => {
+    //   hotspot.addEventListener('click', () => annotationClicked(hotspot));
+    // });
   </script>
 
 
